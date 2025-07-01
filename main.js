@@ -1,16 +1,30 @@
 function todo() {
-    // Function test
+    
     console.log("The button is clicked");
     
-    // Catching input field
+    // Catching the input field element
     const inputField = document.getElementById('input');
     
-    // Catching input value
+    // Catching an input value
     const inputValue = inputField.value; 
 
-    // Writing the input value in the console 
-    console.log("The input value is: ", inputValue );   
-}
+    console.log("The input value is: ", inputValue ); 
+    
+    // Creating an empty li element
+    const liElement = document.createElement('li');
 
+    // Populating the textContent attribute of the li object with the input Value
+    liElement.textContent = inputValue; 
+
+    // Catching the todos element (ul)
+    const todosUlElement = document.getElementById('todos');
+    
+    // Appending the li element to todosUlElement
+    todosUlElement.append(liElement);
+
+}
+    // Catching the button element
     const button = document.getElementById('button');
+
+    // Assigning the todo function to the button 
     button.onclick = todo; 
