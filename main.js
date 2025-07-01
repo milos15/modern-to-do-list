@@ -9,8 +9,14 @@ function todo() {
     const inputValue = inputField.value; 
 
     console.log("The input value is: ", inputValue ); 
-    
-    // Creating an empty li element
+
+    if (inputValue === "") {
+
+        alert('Write something!'); 
+
+    } else {
+
+        // Creating an empty li element
     const liElement = document.createElement('li');
 
     // Populating the textContent attribute of the li object with the input Value
@@ -21,6 +27,11 @@ function todo() {
     
     // Appending the li element to todosUlElement
     todosUlElement.append(liElement);
+
+    // Clear input field after adding
+    inputField.value = "";
+
+    }
 
 }
     // Catching the button element
