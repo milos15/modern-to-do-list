@@ -1,0 +1,82 @@
+body  {
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+.circle:hover {
+  box-shadow: 0 0 10px 5px rgba(33, 140, 202, 0.8);
+}
+
+.themes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px; 
+    margin-right: 50px;
+}
+
+.to-do-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.to-do-form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap:10px;
+}
+
+input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background-color: #f0f0f0;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1), inset -2px -2px 5px rgba(255,255,255,0.7);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.input:focus {
+  /*Before clicking the input */ 
+  background-color: #ffffff;
+
+  /*After clicking the input */ 
+  box-shadow: 0 0 8px #be4ffe;
+}
+
+button {
+  margin: auto;
+
+  background: linear-gradient(to right, #095aa1, #1037a1);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+
+
