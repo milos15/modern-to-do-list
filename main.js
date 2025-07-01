@@ -39,3 +39,31 @@ function todo() {
 
     // Assigning the todo function to the button 
     button.onclick = todo; 
+
+
+
+const motivationalQuotes = [
+  "Keep pushing forward!",
+  "You are capable of amazing things.",
+  "Believe in yourself and all that you are.",
+  "Stay positive, work hard, make it happen.",
+  "Every day is a second chance."
+];   
+
+function showMotivationalQuotes() {
+     // Give me a random index from the motivationalQuotes array 
+    const index = Math.floor(Math.random() * motivationalQuotes.length); // 0 ili 1 * array length
+
+    // Random message 
+    const message = motivationalQuotes[index];
+
+    const motivationElement = document.getElementById('motivational');
+
+    motivationElement.textContent = message; 
+
+}
+
+// Page reload
+document.addEventListener('DOMContentLoaded', function() {
+  showMotivationalQuotes();
+});

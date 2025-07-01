@@ -4,6 +4,19 @@ body  {
     transition: background-color 0.5s ease;
 }
 
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#motivational {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 40px; 
+}
+
 .circle {
   width: 30px;
   height: 30px;
@@ -17,7 +30,7 @@ body  {
   box-shadow: 0 0 10px 5px rgba(33, 140, 202, 0.8);
 }
 
-.themes {
+#themes {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
