@@ -39,14 +39,14 @@ body  {
     margin-right: 50px;
 }
 
-.to-do-content {
+.todo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 70px;
 }
 
-.to-do-form {
+.todo-content {
     width: 500px;
     display: flex;
     flex-direction: column;

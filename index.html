@@ -5,37 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern to-do List</title>
     <!--External CSS file-->
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   </head>
 
   <body>
     <div id="navbar">
-        <div id="motivational"></div>
+      <!--Inserting Motivational Quotes dynamically-->
+      <div id="motivational"></div>
 
-        <div id="themes">
-            <h3>Pick Your Theme:</h3>
-            <div class="basic-theme circle"></div>
-            <div class="ligth-theme circle"></div>
-            <div class="dark-theme circle"></div>
-        </div>
+      <div id="themes">
+        <h3>Pick Your Theme:</h3>
+        <div class="basic-theme circle"></div>
+        <div class="ligth-theme circle"></div>
+        <div class="dark-theme circle"></div>
+      </div>
     </div>
 
-    <div class="to-do-content">
-      <div class="to-do-form">
+    <div class="todo">
+      <div class="todo-content">
         <h1>Let's do something today!</h1>
         <input type="text" placeholder="Add a task" id="input" />
         <button id="button">Hit the button!</button>
 
         <!--Inserting Todos dynamically-->
-        <ul id="todos"></ul>
+        <ul id="todos">
+          
+        </ul>
       </div>
     </div>
 
-    <div>
-
-    </div>
-
     <!--External JS file-->
-    <script src="main.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
