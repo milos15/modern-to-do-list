@@ -1,69 +1,51 @@
-function todo() {
+window.onload = function() {
     
-    console.log("The button is clicked");
-    
-    // Catching the input field element
-    const inputField = document.getElementById('input');
-    
-    // Catching an input value
-    const inputValue = inputField.value; 
+    // Catching HTML elements
+    const input = document.getElementById('input');
+    const button = document.getElementById('button');
+    const ul = document.getElementById('tasks'); 
 
-    console.log("The input value is: ", inputValue ); 
+    function createTask() {
+        
+        // Pull out the text from the input element:
+        const inputValue = input.value;
 
-    if (inputValue === "") {
+        // Create input type Checkbox element: 
+        const inputCheckbox = document.createElement('input');
+        inputCheckbox.type = 'checkbox'; 
+        
+        // Create p element: 
+        const p = document.createElement('p');
 
-        alert('Write something!'); 
+        // Populate textContent attribute of p with the input text:
+        p.textContent = inputValue; 
+        
+        // Create li element: 
+        const li = document.createElement('li');
 
-    } else {
+        // Add the li class to apply the CSS styles:
+        li.classList.add('task');
 
-        // Creating an empty li element
-    const liElement = document.createElement('li');
+        // Append input and p elements to li: 
+        li.append(inputCheckbox); // Left
+        li.append(p); // Right 
 
-    // Populating the textContent attribute of the li object with the input Value
-    liElement.textContent = inputValue; 
+        // Append li to ul:
+        ul.append(li);
 
-    // Catching the todos element (ul)
-    const todosUlElement = document.getElementById('todos');
-    
-    // Appending the li element to todosUlElement
-    todosUlElement.append(liElement);
-
-    // Clear input field after adding
-    inputField.value = "";
-
+        // Clear the text from the input field:
+        input.value = ""; 
     }
 
-}
-    // Catching the button element
-    const button = document.getElementById('button');
+    // KEYBOARD -> Add a task with the Enter key
+    input.addEventListener('keydown', function(event){
+        if(event.key === 'Enter') {
+            createTask();
+        }
+    });
 
-    // Assigning the todo function to the button 
-    button.onclick = todo; 
-
-
-
-const motivationalQuotes = [
-  "Keep pushing forward!",
-  "You are capable of amazing things.",
-  "Believe in yourself and all that you are.",
-  "Stay positive, work hard, make it happen.",
-  "Every day is a second chance."
-];   
-
-function showMotivationalQuotes() {
-     // Give me a random index from the motivationalQuotes array 
-    const index = Math.floor(Math.random() * motivationalQuotes.length); // 0 ili 1 * array length
-
-    // Random message 
-    const message = motivationalQuotes[index];
-
-    const motivationElement = document.getElementById('motivational');
-
-    motivationElement.textContent = message; 
-
-}
-
-// Page reload
-window.onload = function() {
-    showMotivationalQuotes();
+    // MOUSE -> Add a task with the mouse click
+    button.addEventListener('click', function(){
+        createTask();
+    });
 }
