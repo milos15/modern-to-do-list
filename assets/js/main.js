@@ -64,6 +64,6 @@ function showMotivationalQuotes() {
 }
 
 // Page reload
-document.addEventListener('DOMContentLoaded', function() {
-  showMotivationalQuotes();
-});
+window.onload = function() {
+    showMotivationalQuotes();
+}
