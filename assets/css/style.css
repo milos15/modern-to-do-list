@@ -95,6 +95,8 @@ button {
 }
 
 .tasks {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -106,10 +108,41 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
   gap: 8px;
   background-color: #f0f0f0;
   margin-top: 8px;
   margin-bottom: 8px;
   padding: 0 10px; /* top-bottom, left-right */
   border-radius: 10px;
+}
+
+.task input {
+  appearance: none; /* We need to add this property and value:none in order to style the input */
+  border: 2px solid rgba(173, 166, 166, 0.952); 
+  border-radius: 4px;
+  width: 20px; 
+  height: 20px;
+}
+
+/* Input States */
+
+/* Checked */ 
+.task input:checked {
+  background-color:#0f3ca1;
+}
+/* Completed */
+/* If we want to style the element with both classes - task AND completed. */
+
+.task.completed { /*No space between classes!!! */
+  opacity: 0.4;
+}
+
+.task.completed p {
+  text-decoration: line-through;
+}
+
+.task p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
 }
