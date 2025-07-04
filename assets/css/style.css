@@ -17,6 +17,15 @@ body  {
   margin-left: 40px; 
 }
 
+#themes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px; 
+    margin-right: 50px;
+}
+
 .circle {
   width: 30px;
   height: 30px;
@@ -30,14 +39,28 @@ body  {
   box-shadow: 0 0 10px 5px rgba(33, 140, 202, 0.8);
 }
 
-#themes {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 8px; 
-    margin-right: 50px;
+.white-theme.circle {
+  background-color: white;
 }
+
+.dark-theme.circle {
+  background-color: black;
+}
+
+body.white-theme {
+  background-color: white;
+  color: black; 
+}
+
+body.dark-theme {
+  background-color: black;
+  color: white; 
+}
+
+body.dark-theme p {
+  color: black;
+}
+
 
 .todo {
     max-width: 600px;

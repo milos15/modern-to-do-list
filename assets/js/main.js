@@ -35,18 +35,34 @@ window.onload = function () {
     input.value = "";
   }
 
-  // KEYBOARD -> Add a task with the Enter key
   input.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       createTask();
     }
   });
 
-  // MOUSE -> Add a task with the mouse click
   button.addEventListener("click", function () {
     createTask();
   });
 
+  // Change Themes
+  const white = document.getElementById("white-theme");
+  const dark = document.getElementById("dark-theme");
+
+  function whiteTheme() {
+    document.body.classList.remove("dark-theme");
+    document.body.classList.add("white-theme");
+  }
+
+  function darkTheme() {
+    document.body.classList.remove("white-theme");
+    document.body.classList.add("dark-theme");
+  }
+
+  white.addEventListener("click", whiteTheme);
+  dark.addEventListener("click", darkTheme);
+
+  
   // Motivational Quotes
   const motivationalQuotes = [
     "Keep pushing forward!",
