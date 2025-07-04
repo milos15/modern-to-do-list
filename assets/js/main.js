@@ -5,30 +5,38 @@ window.onload = function () {
   const ul = document.getElementById("tasks");
 
   function createTask() {
-    // Pull out the text from the input element:
+    // 1) Get input value: 
     const inputValue = input.value;
 
-    // If the input value is empty, jump out! This prevents adding an empty task.
-    if (inputValue === "") {
+    // 2) Prevent adding an empty task:
+    if (inputValue.length === 0) {
       alert("Hey! Do not be lazy. Write something!");
       return;
     }
-
-    // Create input type Checkbox element:
-    const inputCheckbox = document.createElement("input");
-    inputCheckbox.type = "checkbox";
-
-    // Create p element:
-    const p = document.createElement("p");
-
-    // Populate textContent attribute of p with the input text:
-    p.textContent = inputValue;
-
-    // Create li element:
+    // 3) Create li element: ----> <li> </li>
     const li = document.createElement("li");
 
-    // Add the li class to apply the CSS styles:
+    // 4) Add the class task: ----> <li class="task"></li>
     li.classList.add("task");
+
+    // 5) Create p element: ----> <p> </p>
+    const p = document.createElement("p"); 
+
+    // 6) Populate the textContent attribute: ----> <p>...</p>
+    p.textContent = inputValue;
+
+    // 7) Create input type Checkbox: ----> <input />
+    const inputCheckbox = document.createElement("input");
+
+    inputCheckbox.type = "checkbox"; // ----> <input type="checkbox" />
+
+    inputCheckbox.addEventListener("click", function () {
+      if (inputCheckbox.checked) {
+        li.classList.add("completed"); // ----> <li class="task completed">
+      } else {
+        li.classList.remove("completed"); // ----> <li class="task">
+      }
+    });
 
     // Append input and p elements to li:
     li.append(inputCheckbox); // Left
