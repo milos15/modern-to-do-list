@@ -8,6 +8,12 @@ window.onload = function () {
     // Pull out the text from the input element:
     const inputValue = input.value;
 
+    // If the input value is empty, jump out! This prevents adding an empty task.
+    if (inputValue === "") {
+      alert("Hey! Do not be lazy. Write something!");
+      return;
+    }
+
     // Create input type Checkbox element:
     const inputCheckbox = document.createElement("input");
     inputCheckbox.type = "checkbox";
@@ -62,7 +68,6 @@ window.onload = function () {
   white.addEventListener("click", whiteTheme);
   dark.addEventListener("click", darkTheme);
 
-  
   // Motivational Quotes
   const motivationalQuotes = [
     "Keep pushing forward!",
