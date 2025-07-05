@@ -5,7 +5,7 @@ window.onload = function () {
   const ul = document.getElementById("tasks");
 
   function createTask() {
-    // 1) Get input value: 
+    // 1) Get input value:
     const inputValue = input.value;
 
     // 2) Prevent adding an empty task:
@@ -20,7 +20,7 @@ window.onload = function () {
     li.classList.add("task");
 
     // 5) Create p element: ----> <p> </p>
-    const p = document.createElement("p"); 
+    const p = document.createElement("p");
 
     // 6) Populate the textContent attribute: ----> <p>...</p>
     p.textContent = inputValue;
@@ -38,9 +38,18 @@ window.onload = function () {
       }
     });
 
+    // Remove a task
+    const deleteTask = window.document.createElement("i");
+    deleteTask.classList.add("fa-solid", "fa-trash");
+
+    deleteTask.addEventListener("click", function () {
+      li.remove();
+    });
+
     // Append input and p elements to li:
     li.append(inputCheckbox); // Left
     li.append(p); // Right
+    li.append(deleteTask);
 
     // Append li to ul:
     ul.append(li);
@@ -98,4 +107,8 @@ window.onload = function () {
   }
 
   showMotivationalQuotes();
+
+  motivationElement.addEventListener("click", function () {
+    showMotivationalQuotes();
+  });
 };

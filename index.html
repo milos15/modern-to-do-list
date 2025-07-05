@@ -6,6 +6,12 @@
     <title>Modern to-do List</title>
     <!--External CSS file-->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+    <!--Fortawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -27,7 +33,13 @@
         <button id="button">Hit the button!</button>
 
         <!--Inserting Tasks dynamically-->
-        <ul id="tasks" class="tasks"></ul>
+        <ul id="tasks" class="tasks">
+          <li class="task">
+            <input type="checkbox" />
+            <p>milos</p>
+            <i class="fa-solid fa-trash" id ="delete-task"></i>
+          </li>
+        </ul>
       </div>
     </div>
 
