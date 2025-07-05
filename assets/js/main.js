@@ -47,8 +47,8 @@ window.onload = function () {
     });
 
     // Append input and p elements to li:
-    li.append(inputCheckbox); // Left
-    li.append(p); // Right
+    li.append(inputCheckbox); 
+    li.append(p); 
     li.append(deleteTask);
 
     // Append li to ul:
