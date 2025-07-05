@@ -2,7 +2,6 @@ window.onload = function () {
   // Catching HTML elements
   const input = document.getElementById("input");
   const button = document.getElementById("button");
-  const deleteTask = window.document.createElement("i");
   const ul = document.getElementById("tasks");
 
   function createTask() {
@@ -40,6 +39,7 @@ window.onload = function () {
     });
 
     // Remove a task
+    const deleteTask = window.document.createElement("i");
     deleteTask.classList.add("fa-solid", "fa-trash");
 
     deleteTask.addEventListener("click", function () {
@@ -49,7 +49,7 @@ window.onload = function () {
     // Append input and p elements to li:
     li.append(inputCheckbox);
     li.append(p);
-    li.append(deleteTask);
+    li.appendChild(deleteTask);
 
     // Append li to ul:
     ul.append(li);
