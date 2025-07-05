@@ -40,27 +40,27 @@ body  {
 }
 
 .white-theme.circle {
-  background-color: white;
+  background-color: rgb(251, 252, 252);
 }
 
 .dark-theme.circle {
-  background-color: black;
+  background-color: rgb(49, 32, 22);
+   
 }
 
 body.white-theme {
-  background-color: white;
+  background-color: rgb(251, 252, 252);
   color: black; 
 }
 
 body.dark-theme {
-  background-color: black;
+  background-color: rgb(20, 9, 3);
   color: white; 
 }
 
 body.dark-theme p {
   color: black;
 }
-
 
 .todo {
     max-width: 600px;
@@ -175,5 +175,5 @@ button {
   margin-right: 15px;
   font-size: 18px; 
   color: black;
+  cursor: pointer;
 }
-
