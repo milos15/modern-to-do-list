@@ -1,0 +1,179 @@
+body  {
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#motivational {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 40px; 
+}
+
+#themes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px; 
+    margin-right: 50px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+.circle:hover {
+  box-shadow: 0 0 10px 5px rgba(33, 140, 202, 0.8);
+}
+
+.white-theme.circle {
+  background-color: rgb(251, 252, 252);
+}
+
+.dark-theme.circle {
+  background-color: rgb(49, 32, 22);
+   
+}
+
+body.white-theme {
+  background-color: rgb(251, 252, 252);
+  color: black; 
+}
+
+body.dark-theme {
+  background-color: rgb(20, 9, 3);
+  color: white; 
+}
+
+body.dark-theme p {
+  color: black;
+}
+
+.todo {
+    max-width: 600px;
+    width: 100%;
+    margin: auto; 
+}
+
+.todo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:10px;
+    margin-top: 70px;
+}
+
+#input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background-color: #f0f0f0;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1), inset -2px -2px 5px rgba(255,255,255,0.7);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+#input:focus {
+  /*Before clicking the input */ 
+  background-color: #ffffff;
+
+  /*After clicking the input */ 
+  box-shadow: 0 0 8px #be4ffe;
+}
+
+button {
+  margin: auto;
+  background: linear-gradient(to right, #095aa1, #1037a1);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; 
+  font-size: 18px;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  background-color: #f0f0f0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 0 10px; /* top-bottom, left-right */
+  border-radius: 10px;
+}
+
+.task input {
+  appearance: none; /* We need to add this property and value:none in order to style the input */
+  border: 2px solid rgba(173, 166, 166, 0.952); 
+  border-radius: 4px;
+  width: 20px; 
+  height: 20px;
+}
+
+/* Input States */
+
+/* Checked */ 
+.task input:checked {
+  background-color:#0f3ca1;
+}
+/* Completed */
+/* If we want to style the element with both classes - task AND completed. */
+
+.task.completed { /*No space between classes!!! */
+  opacity: 0.4;
+}
+
+.task.completed p {
+  text-decoration: line-through;
+}
+
+.task p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+.fa-solid {
+  margin-left: auto;
+  margin-right: 15px;
+  font-size: 18px; 
+  color: black;
+  cursor: pointer;
+}
