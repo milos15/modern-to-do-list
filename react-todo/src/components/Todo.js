@@ -49,6 +49,18 @@ const Todo = () => {
     createTask();
   };
 
+  // Checkbox Input
+  const onCheckboxChange = (event, index) => {
+    const inputCheckbox = event.target;
+
+    setTasks((previous) => {
+      previous[index].completed = inputCheckbox.checked;
+      return [ 
+        ...previous
+      ];
+    });
+  };
+
   return (
     <div className="todo">
       <div className="todo-content">
@@ -67,10 +79,15 @@ const Todo = () => {
 
         <ul id="tasks" className="tasks">
           {tasks.map((task, index) => {
-            // For each individual task, map generates a new li element
+            // For every new task, map generates a new li element
             return (
-              <li className="task" key={index}>
-                <input type="checkbox" />
+              <li className={task.completed ? "task completed" : "task"} key={index}>
+                <input
+                  onChange={(event) => {
+                    onCheckboxChange(event, index);
+                  }}
+                  type="checkbox"
+                />
                 <p> {task.name} </p>
                 <i className="fa-solid fa-trash"></i>
               </li>
