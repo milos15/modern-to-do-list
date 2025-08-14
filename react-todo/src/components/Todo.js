@@ -66,7 +66,16 @@ const Todo = () => {
         </button>
 
         <ul id="tasks" className="tasks">
-          
+          {tasks.map((task, index) => {
+            // For each individual task, map generates a new li element
+            return (
+              <li className="task" key={index}>
+                <input type="checkbox" />
+                <p> {task.name} </p>
+                <i className="fa-solid fa-trash"></i>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

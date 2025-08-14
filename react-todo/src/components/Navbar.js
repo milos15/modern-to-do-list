@@ -13,7 +13,7 @@ const Navbar = () => {
     "Every day is a second chance.",
   ]);
 
-  const [quote, setQuote] = React.useState(""); // Initial Quote
+  const [quote, setQuote] = React.useState(0); // Initial Quote
 
   useEffect(() => {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
