@@ -1,16 +1,15 @@
 import React from "react";
 
 const Todo = () => {
-  const[tasks, setTasks] = React.useState([]); 
+  const [tasks, setTasks] = React.useState([]);
 
   // Referring to the input field
   const refs = {
-    input: React.useRef()
+    input: React.useRef(),
   };
 
   // Create Task
   const createTask = () => {
-
     // Getting value
     const input = refs.input.current; // Input element
     const text = input.value; // Input value
@@ -18,7 +17,7 @@ const Todo = () => {
     // Preventing empty inputs
     if (text === "") {
       alert("Hey don't be lazy! Write something.");
-      return; 
+      return;
     }
 
     // Pushing tasks into array
@@ -26,17 +25,17 @@ const Todo = () => {
     const task = {
       name: text,
       completed: false,
-      removed: false 
+      removed: false,
     };
 
-    setTasks(previous => {
+    setTasks((previous) => {
       // Return a new array with previous objects including the last one
-      return [...previous, task]; 
+      return [...previous, task];
     });
 
     // Clear the input
-    input.value = ""; 
-  
+    input.value = "";
+
     console.log(tasks);
   };
 
@@ -66,7 +65,9 @@ const Todo = () => {
           Hit the button!
         </button>
 
-        <ul id="tasks" className="tasks"></ul>
+        <ul id="tasks" className="tasks">
+          
+        </ul>
       </div>
     </div>
   );

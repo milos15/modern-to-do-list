@@ -4,6 +4,22 @@ import { useEffect } from "react";
 const Navbar = () => {
   const [color, setColor] = React.useState("white");
 
+  // Quotes
+  const [quotes] = React.useState([
+    "Keep pushing forward!",
+    "You are capable of amazing things.",
+    "Believe in yourself and all that you are.",
+    "Stay positive, work hard, make it happen.",
+    "Every day is a second chance.",
+  ]);
+
+  const [quote, setQuote] = React.useState(""); // Initial Quote
+
+  useEffect(() => {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    setQuote(randomQuote);
+  }, [quotes]);
+
   useEffect(() => {
     if (color === "white") {
       document.body.classList.add("white-theme");
@@ -24,7 +40,9 @@ const Navbar = () => {
 
   return (
     <div id="navbar">
-      <div id="motivational"></div>
+      <div id="motivational">
+        {quote}
+      </div>
 
       <div id="themes">
         <h3>Pick Your Theme:</h3>
