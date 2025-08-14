@@ -5,20 +5,20 @@ const Navbar = () => {
   const [color, setColor] = React.useState("white");
 
   // Quotes
-  const [quotes] = React.useState([
+  const quotes = [
     "Keep pushing forward!",
     "You are capable of amazing things.",
     "Believe in yourself and all that you are.",
     "Stay positive, work hard, make it happen.",
     "Every day is a second chance.",
-  ]);
+  ];
 
-  const [quote, setQuote] = React.useState(0); // Initial Quote
+  const [quote, setQuote] = React.useState(quotes[Math.floor(Math.random() * quotes.length)]); // Initial Quote
 
-  useEffect(() => {
+  const ChangeQuote = () => {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     setQuote(randomQuote);
-  }, [quotes]);
+  };
 
   useEffect(() => {
     if (color === "white") {
@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <div id="navbar">
-      <div id="motivational">
+      <div onClick={ChangeQuote} id="motivational">
         {quote}
       </div>
 
