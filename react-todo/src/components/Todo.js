@@ -23,9 +23,9 @@ const Todo = () => {
     // Pushing tasks into array
     // Template task object
     const task = {
+      id: Date.now(), // Generate more complex ids -> After deleting a task, the next one won't occupy its index.  
       name: text,
       completed: false,
-      removed: false,
     };
 
     setTasks((previous) => {
@@ -39,6 +39,7 @@ const Todo = () => {
     console.log(tasks);
   };
 
+  // Click Listeners
   const enterListener = (event) => {
     if (event.key === "Enter") {
       createTask();
@@ -55,9 +56,14 @@ const Todo = () => {
 
     setTasks((previous) => {
       previous[index].completed = inputCheckbox.checked;
-      return [ 
-        ...previous
-      ];
+      return [...previous];
+    });
+  };
+
+  // Delete Function
+  const deleteTask = (index) => {
+    setTasks((previous) => {
+      return previous.filter((task) => task.id !== index);
     });
   };
 
@@ -81,7 +87,7 @@ const Todo = () => {
           {tasks.map((task, index) => {
             // For every new task, map generates a new li element
             return (
-              <li className={task.completed ? "task completed" : "task"} key={index}>
+              <li className={task.completed ? "task completed" : "task"} key={task.id}>
                 <input
                   onChange={(event) => {
                     onCheckboxChange(event, index);
@@ -89,7 +95,7 @@ const Todo = () => {
                   type="checkbox"
                 />
                 <p> {task.name} </p>
-                <i className="fa-solid fa-trash"></i>
+                <i onClick={() => deleteTask(task.id)} className="fa-solid fa-trash"></i>
               </li>
             );
           })}
