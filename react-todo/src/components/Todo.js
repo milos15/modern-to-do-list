@@ -8,7 +8,7 @@ const Todo = () => {
     input: React.useRef(),
   };
 
-  // Create Task
+  // Create Task Function
   const createTask = () => {
     // Getting value
     const input = refs.input.current; // Input element
@@ -35,8 +35,6 @@ const Todo = () => {
 
     // Clear the input
     input.value = "";
-
-    console.log(tasks);
   };
 
   // Click Listeners
@@ -50,7 +48,7 @@ const Todo = () => {
     createTask();
   };
 
-  // Checkbox Input
+  // Checkbox Input Function
   const onCheckboxChange = (event, index) => {
     const inputCheckbox = event.target;
 
